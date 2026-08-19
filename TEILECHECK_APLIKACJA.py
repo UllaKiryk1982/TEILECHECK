@@ -296,7 +296,23 @@ def UploadAction():
 #     tnr.to_excel('test.xlsx')
     return tnr
 
+def reload_app():
 
+    global result_df
+    global tnr
+
+    # wyczyść ścieżki plików
+    val.set("")
+    val2.set("")
+
+    # usuń dane z pamięci
+    result_df = pd.DataFrame()
+    tnr = pd.DataFrame()
+
+    messagebox.showinfo(
+        "Reload",
+        "Dane zostały wyczyszczone.\nMożesz wczytać nowe pliki."
+    )
 
 def start(): 
     global check3
@@ -588,9 +604,18 @@ name_label = tk.Label(root, text=' ')
 name_label.grid(row=26, column=0,padx=5, pady=5)
 
 button5 = tk.Button(text='Exit', command=close, bg='brown', fg='white',activebackground='grey', width=10)
-button5.grid(row=26, column=3)
+button5.grid(row=30, column=2)
 
+button_reload = tk.Button(
+    text='Reload',
+    command=reload_app,
+    bg='grey',
+    fg='white',
+    activebackground='lightgrey',
+    width=10
+)
 
+button_reload.grid(row=25, column=2)
     
 root.mainloop()
 
