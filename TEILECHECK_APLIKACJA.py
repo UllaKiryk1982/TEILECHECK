@@ -29,7 +29,7 @@ from pathlib import Path
 
 
 root= tk.Tk()
-root.geometry("1100x250")
+root.geometry("1200x250")
 root.title('TEILECHECK VSL       Version 1.0              @ Urszula Kiryk-Kania' )  #- @Autor Urszula Kiryk-Kania (PWL-1/4)'
 
 root.update()
